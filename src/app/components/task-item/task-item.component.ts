@@ -24,6 +24,12 @@ export class TaskItemComponent implements OnInit {
 
   ngOnInit(): void {}
 
+  formatTime(task: Task): string {
+    let dateParts: string[] = task.day.split('T');
+    let result: string = `${dateParts[0]} ${dateParts[1]}`;
+    return result;
+  }
+
   onDelete(task: Task) {
     this.onDeleteTask.emit(task);
   }
